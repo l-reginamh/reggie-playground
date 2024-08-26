@@ -19,7 +19,7 @@ const config = {
     },
     extend: {
       backgroundImage: {
-        'pixel': "url('/bg2.jpg')",
+        'pixel': "url('/bg6.jpg')",
       },
       fontSize: {
         'sm': '0.875rem',

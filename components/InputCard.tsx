@@ -1,5 +1,3 @@
-import * as React from "react"
-
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -10,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { FaDeleteLeft, FaPlus } from "react-icons/fa6";
 import { useToast } from "./ui/use-toast"
 
@@ -40,6 +38,28 @@ export function InputCard({ items, onAddToList, onUpdateList, onClearList }: Inp
             description: "You have reach the maximum available input.",
         })
     }
+
+    useEffect(() => {
+        const keyDownHandler = (e: KeyboardEvent) => {
+            if (e.code === "Enter") {
+                if (items.length >= 20) {
+                    showHitMaxInputToast();
+                }
+                else if (inputValue === "") {
+                    showInvalidInputToast();
+                } else {
+                    onAddToList(inputValue)
+                    setInputValue("");
+                }
+            }
+        }
+        document.addEventListener("keydown", keyDownHandler);
+    
+        // clean up
+        return () => {
+          document.removeEventListener("keydown", keyDownHandler);
+        };
+      }, [inputValue]);
     
     return (
         <Card className="w-full">
@@ -55,7 +75,8 @@ export function InputCard({ items, onAddToList, onUpdateList, onClearList }: Inp
                             }}  />
                         </div>
                         <div className="flex">
-                            <Button onClick={() => {
+                            <Button
+                            onClick={() => {
                                 if (items.length >= 20) {
                                     showHitMaxInputToast();
                                 }
@@ -65,7 +86,8 @@ export function InputCard({ items, onAddToList, onUpdateList, onClearList }: Inp
                                     onAddToList(inputValue)
                                     setInputValue("");
                                 }
-                            }} className="nes-btn is-primary text-center w-[45px]">
+                            }}
+                            className="nes-btn is-primary text-center w-[45px]">
                                 <FaPlus />
                             </Button>
                         </div>
