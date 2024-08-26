@@ -1,5 +1,6 @@
 "use client"
 
+import BreadcrumbHeader from '@/components/BreadcrumbHeader';
 import { InputCard } from '@/components/InputCard';
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 import { Button } from '@/components/ui/button';
@@ -43,22 +44,12 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-white text-xs flex mx-auto max-w-screen-xl min-h-screen flex-col items-center lg:justify-start py-24 px-5 md:px-8 lg:px-24">
-      <div className="flex flex-col w-full pl-1 mb-5">
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink href="/" className='nes-text is-disabled'>Home</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>Pick for me</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+    <main className="bg-white text-xs flex mx-auto max-w-screen-xl min-h-screen flex-col items-center lg:justify-start p-5 md:p-8 lg:px-24">
+      <div className="flex flex-col w-full mb-10 nes-container">
+        <BreadcrumbHeader subtitle="Pick for me!" className="nes-text is-success"></BreadcrumbHeader>
       </div>
       {/* <div className="h-2 bg-gradient-to-r from-purple-500 to-pink-500 mb-10 w-full"></div> */}
-      <div className='flex flex-col md:flex-row w-full px-1'>
+      <div className='flex flex-col md:flex-row w-full'>
         <div className="flex flex-col flex-1 w-full item-center">
           <div className='mb-5'>
             <div className="text-4xl nes-text is-success font-bold mb-1">
