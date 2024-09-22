@@ -19,10 +19,8 @@ export default function Home() {
     });
   }, []);
 
-  
-
   return (
-    <main className="text-xs">
+    <main className="bg-pixel bg-cover bg-center text-xs text-foreground">
       <div className='flex mx-auto max-w-screen-xl min-h-screen flex-col items-center justify-between p-5 md:p-8 lg:p-24'>
         <div className='flex flex-col w-full p-8'>
           <div className='text-center'>

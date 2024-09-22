@@ -44,7 +44,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="bg-white text-xs flex mx-auto max-w-screen-xl min-h-screen flex-col items-center lg:justify-start p-5 md:p-8 lg:px-24">
+    <main className="text-xs flex mx-auto max-w-screen-xl min-h-screen flex-col items-center lg:justify-start p-5 md:p-8 lg:px-24">
       <div className="flex flex-col w-full mb-10 nes-container">
         <BreadcrumbHeader subtitle="Pick for me!" className="nes-text is-success"></BreadcrumbHeader>
       </div>

@@ -18,9 +18,9 @@ const config = {
       },
     },
     extend: {
-      backgroundImage: {
-        'pixel': "url('/bg6.jpg')",
-      },
+      // backgroundImage: {
+      //   'pixel': "url('/bg6.jpg')",
+      // },
       fontSize: {
         'sm': '0.875rem',
         'xs': '0.75rem;',
