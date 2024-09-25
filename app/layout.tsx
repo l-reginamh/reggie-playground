@@ -31,7 +31,7 @@ export default function RootLayout({
       </head>
       <body className={cn("min-h-screen bg-background font-sans antialiased", inter.className)}>
         <Providers>
-          <div className="text-xs flex flex-col">
+          <div className="flex flex-col">
             <SiteMenu />
             <div className="w-full p-5">
               {children}

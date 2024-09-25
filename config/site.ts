@@ -30,6 +30,13 @@ export const siteConfig = {
             available: false
         },
         {
+            title: "Markdown Editor!",
+            path: "/markdown-editor",
+            category: "Tools",
+            description: "Lazy to find online markdown editor...",
+            available: true
+        },
+        {
             title: "XLSX to JSON converter",
             path: "/xlsx-to-json-converter",
             category: "Tools",
